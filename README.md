@@ -24,6 +24,6 @@ source activate fastmri;
 module load cuda cuda-sdk;
 module load python3/3.8.3_anaconda2020.07_mamba;
 deviceQuery | grep NumDevs;
-export LD_LIBRARY_PATH=/home/csci5980/huan1780/.conda/envs/fastmri/lib:$LD_LIBRARY_PATH;
+export LD_LIBRARY_PATH=/home/csci5980/liang664/.conda/envs/fastmri/lib:$LD_LIBRARY_PATH;
 ```
-where the group(csci5980) and user(huan1780) directory need to be changed to your own directory name.
+where the group(csci5980) and user(liang664) directory need to be changed to your own directory name.
