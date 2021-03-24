@@ -1,0 +1,36 @@
+# Login MSI first
+
+ssh mesabi
+
+# Login v100-8: access the v100-8 GPU nodes
+
+qsub -I -l nodes=1:ppn=24:gpus=2,walltime=50:00 -q v100-8
+module load cuda cuda-sdk
+deviceQuery | grep NumDevs
+
+module load python3/3.8.3_anaconda2020.07_mamba
+
+# Cloning an Anaconda Python Environment
+
+conda info --envs
+conda create --name fastmri --clone base
+source activate fastmri
+
+# install GCC version 6 and conda gcc tools
+conda install -c omgarcia gcc-6
+conda install libgcc
+
+# make sure that you see GLIBCXX_3.4.xx on the list (which it could not find before)
+strings <conda-env-path>/lib/libstdc++.so.6 | grep GLIBCXX
+
+# IMPORTANT: add it to library paths
+export LD_LIBRARY_PATH=<conda-env-path>/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/siepmann/liang664/.conda/envs/fastmri/lib:$LD_LIBRARY_PATH
+
+
+############################################################################
+qsub -I -l nodes=1:ppn=24:gpus=2,walltime=50:00 -q v100
+-8
+module load python3/3.8.3_anaconda2020.07_mamba
+source activate fastmri
+export LD_LIBRARY_PATH=/home/siepmann/liang664/.conda/envs/fastmri/lib:$LD_LIBRARY_PATH
