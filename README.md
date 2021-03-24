@@ -18,7 +18,19 @@ Refer to https://github.com/facebookresearch/fastMRI on "Dependencise and Instal
 
 
 ## Files Description
-final_report.pdf is the final report of the project. FastMriDataModule.py is the data pre-processing code from FastMRI. generator.py is the generator model. unet_model.py is unet model(reconstructor) we used. PerformanceMetrics.py is performance metrics we used. train.py is the main training function we used. train_pert.py is the training for perturbation alone. pytorch_ssim directory is pytorch differntiable SSIM from https://github.com/Po-Hsun-Su/pytorch-ssim.
+![Final_report.pdf](./Final_Report.pdf) and ![Supporting_Information.pdf](./Supporting_Information.pdf) are the written report of the project. 
+
+FastMriDataModule.py is the data pre-processing code from FastMRI. 
+
+generator.py is the generator model. 
+
+unet_model.py is unet model(reconstructor) we used. 
+
+PerformanceMetrics.py is performance metrics we used. 
+
+train.py is the main training function we used. train_pert.py is the training for perturbation alone. 
+
+pytorch_ssim directory is pytorch differntiable SSIM from https://github.com/Po-Hsun-Su/pytorch-ssim.
 
 To see how we visualize the MRI images with and without perturbation, check Visualization.ipynb. To run the notebook, trained model need to be loaded with pytorch.
 
