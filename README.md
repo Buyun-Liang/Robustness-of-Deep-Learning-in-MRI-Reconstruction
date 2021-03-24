@@ -9,13 +9,14 @@ The goal is to improve the stability of deep learning model on MRI reconstructio
 * [Contact](#contact)
 
 ## General Information
+Magnetic Resonance Imaging (MRI) is an important medical imaging technique to obtain the anatomy and the physiological processes of the body. MRI examination usually takes a long time, which increases patients stress and diagnostic cost. Decreasing sampling number in Fourier domain could efficiently reduce the acquisition time, hence accelerate the examination process. As the reconstruction process violates Nyquist-Shannon sampling theorem, how to reconstruct high quality image from the subsampled Fourier domain is a difficult problem. The rapid development of deep learning techniques shows the potential to solve this problem. However, researchers found the deep learning techniques have a robustness issue: hardly perceptible perturbation in input data could lead to serious artifacts or enhanced noise, which causes the diagnosis untruthful. A novel adversarial training strategy was used in this projects to improve the stability of the reconstruction model. The result shows this training strategy successfully minimized the effect of perturbations.
 
 ## Dependencies and Installation
 To run this project, it's required to install fastMRI github packages to perform some pre-processing.
 Refer to https://github.com/facebookresearch/fastMRI on "Dependencise and Installation" section about how to setup the environment. After installing the environment, put the Code_adver_train directory to ./FastMRI/fastMRI-master.
 
 ## Sample Results
-![Example screenshot](./img/screenshot.png)
+![Example screenshot](./img/sample.png)
 
 ## Files Description
 final_report.pdf is the final report of the project. FastMriDataModule.py is the data pre-processing code from FastMRI. generator.py is the generator model. unet_model.py is unet model(reconstructor) we used. PerformanceMetrics.py is performance metrics we used. train.py is the main training function we used. train_pert.py is the training for perturbation alone. pytorch_ssim directory is pytorch differntiable SSIM from https://github.com/Po-Hsun-Su/pytorch-ssim.
